@@ -1,0 +1,13 @@
+<h1><%= @drill.group.title %> Drills</h1>
+<h2>Drill: <%= @drill.title %></h2>
+<p><%= @drill.description %></p>
+<hr>
+<%= form_tag drill_user_answers_path(@drill), method: 'post' do %>
+  <div>
+    <%= label_tag :user_answer, "Your answer:" %>
+    <%= text_area_tag :user_answer %>
+  </div>
+  <div>
+    <%= submit_tag("Submit Answer") %>
+  </div>
+<% end %>
