@@ -7,10 +7,10 @@ class Group < ApplicationRecord
   # VALIDATIONS
   validates :title, presence: true, uniqueness: true
 
-  def completion(x)
-
-
+  def child_total(user, groups)
+    Drill.where(:group_id => groups).all
   end
+
 
   def bookmarked_by?(user, groups)
     if (UserGroup.exists?(:user => user) && UserGroup.exists?(:group => groups.id))
